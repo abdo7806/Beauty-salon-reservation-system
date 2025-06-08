@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "QiBjImLaQCw=",
+  "success": true,
+  "projectFilePath": "D:\\كورسات ابو هد هود\\مشاريع github\\BeautySalonSystem\\BookingSystem.API\\BookingSystem.API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Zbook\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.0\\microsoft.aspnetcore.openapi.9.0.0.nupkg.sha512",
+    "C:\\Users\\Zbook\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
