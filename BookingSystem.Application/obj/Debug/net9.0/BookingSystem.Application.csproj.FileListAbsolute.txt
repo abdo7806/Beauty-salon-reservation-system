@@ -1,0 +1,16 @@
+D:\كورسات ابو هد هود\مشاريع github\BeautySalonSystem\BookingSystem.Application\bin\Debug\net9.0\BookingSystem.Application.deps.json
+D:\كورسات ابو هد هود\مشاريع github\BeautySalonSystem\BookingSystem.Application\bin\Debug\net9.0\BookingSystem.Application.dll
+D:\كورسات ابو هد هود\مشاريع github\BeautySalonSystem\BookingSystem.Application\bin\Debug\net9.0\BookingSystem.Application.pdb
+D:\كورسات ابو هد هود\مشاريع github\BeautySalonSystem\BookingSystem.Application\bin\Debug\net9.0\BookingSystem.Domain.dll
+D:\كورسات ابو هد هود\مشاريع github\BeautySalonSystem\BookingSystem.Application\bin\Debug\net9.0\BookingSystem.Domain.pdb
+D:\كورسات ابو هد هود\مشاريع github\BeautySalonSystem\BookingSystem.Application\obj\Debug\net9.0\BookingSystem.Application.csproj.AssemblyReference.cache
+D:\كورسات ابو هد هود\مشاريع github\BeautySalonSystem\BookingSystem.Application\obj\Debug\net9.0\BookingSystem.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\كورسات ابو هد هود\مشاريع github\BeautySalonSystem\BookingSystem.Application\obj\Debug\net9.0\BookingSystem.Application.AssemblyInfoInputs.cache
+D:\كورسات ابو هد هود\مشاريع github\BeautySalonSystem\BookingSystem.Application\obj\Debug\net9.0\BookingSystem.Application.AssemblyInfo.cs
+D:\كورسات ابو هد هود\مشاريع github\BeautySalonSystem\BookingSystem.Application\obj\Debug\net9.0\BookingSystem.Application.csproj.CoreCompileInputs.cache
+D:\كورسات ابو هد هود\مشاريع github\BeautySalonSystem\BookingSystem.Application\obj\Debug\net9.0\BookingSystem.Application.sourcelink.json
+D:\كورسات ابو هد هود\مشاريع github\BeautySalonSystem\BookingSystem.Application\obj\Debug\net9.0\BookingS.5EAA46C0.Up2Date
+D:\كورسات ابو هد هود\مشاريع github\BeautySalonSystem\BookingSystem.Application\obj\Debug\net9.0\BookingSystem.Application.dll
+D:\كورسات ابو هد هود\مشاريع github\BeautySalonSystem\BookingSystem.Application\obj\Debug\net9.0\refint\BookingSystem.Application.dll
+D:\كورسات ابو هد هود\مشاريع github\BeautySalonSystem\BookingSystem.Application\obj\Debug\net9.0\BookingSystem.Application.pdb
+D:\كورسات ابو هد هود\مشاريع github\BeautySalonSystem\BookingSystem.Application\obj\Debug\net9.0\ref\BookingSystem.Application.dll

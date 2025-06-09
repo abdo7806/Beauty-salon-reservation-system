@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace BookingSystem.Domain.Entites
 {
-    internal class Service
+    public class Service
     {
+        public int Id { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public int Duration { get; set; } // بالدقائق
+        public decimal Price { get; set; }
+
+        // Navigation property
+        public ICollection<Appointment> Appointments { get; set; } = new List<Appointment>();
     }
 }

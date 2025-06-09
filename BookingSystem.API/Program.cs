@@ -1,16 +1,86 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+
 var builder = WebApplication.CreateBuilder(args);
 
+// ÅÖÇİÉ CORS ááÓãÇÍ ÈÇáæÕæá ÇáÚÇã
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        policy =>
+        {
+            policy.AllowAnyOrigin()  // ÇáÓãÇÍ ÈÃí ãÕÏÑ
+                  .AllowAnyMethod()  // ÇáÓãÇÍ ÈÃí ØÑíŞÉ (GET, POST, PUT, DELETE)
+                  .AllowAnyHeader(); // ÇáÓãÇÍ ÈÃí ÑÃÓ (headers)
+        });
+});
+
+
+// ÅÖÇİÉ ÇáÎÏãÇÊ
+builder.Services.AddControllers();
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
+// ÅÚÏÇÏ ÎÏãÇÊ ÇáãÕÇÏŞÉ ÈÇÓÊÎÏÇã JWT
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        // ÅÚÏÇÏ ãÚáãÇÊ ÇáÊÍŞŞ ãä ÕÍÉ ÇáÊæßä
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            // ÊÍŞŞ ããÇ ÅĞÇ ßÇä ÇáãõÕÏÑ ááÊæßä ÕÍíÍğÇ
+            ValidateIssuer = true,
+            // ÊÍŞŞ ããÇ ÅĞÇ ßÇä ÇáÌãåæÑ ÇáãÓÊåÏİ ááÊæßä ÕÍíÍğÇ
+            ValidateAudience = true,
+            // ÊÍŞŞ ããÇ ÅĞÇ ßÇäÊ ÕáÇÍíÉ ÇáÊæßä ŞÏ ÇäÊåÊ
+            ValidateLifetime = true,
+            // ÊÍŞŞ ããÇ ÅĞÇ ßÇä ãİÊÇÍ ÇáÊæŞíÚ ÕÍíÍğÇ
+            ValidateIssuerSigningKey = true,
+            // ÇáÌåÉ ÇáãÕÏÑÉ ááÊæßä¡ íÊã ÇáÍÕæá ÚáíåÇ ãä ãáİ ÇáÅÚÏÇÏÇÊ
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            // ÇáÌãåæÑ ÇáãÓÊåÏİ ÇáĞí íÓÊÎÏã ÇáÊæßä¡ íÊã ÇáÍÕæá Úáíå ãä ãáİ ÇáÅÚÏÇÏÇÊ
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            // ÇáãİÊÇÍ ÇáÓÑí ÇáĞí íÓÊÎÏã áÊæŞíÚ ÇáÊæßä¡ íÊã ÊÍæíáå Åáì ãÕİæİÉ ÈÇíÊ
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+        };
+    });
+
+builder.Services.AddDbContext<BookingDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// ÅÖÇİÉ ÎÏãÇÊ Swagger
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+
 var app = builder.Build();
+
+
+// Êãßíä Swagger
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+        c.RoutePrefix = string.Empty; // áÚÑÖ ÇáæÇÌåÉ Úáì ÇáÌĞÑ
+    });
+    app.MapOpenApi(); // ÊÃßÏ ãä Ãäß ÊŞæã ÈÊÔÛíá MapOpenApi åäÇ
+
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseSwagger();  // ÊÃßÏ ãä Ãä Swagger íÚãá ÈÔßá ÕÍíÍ
+
     app.MapOpenApi();
 }
+
+
 
 app.UseHttpsRedirection();
 
@@ -33,6 +103,13 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast");
 
+// åäÇ¡ ÊÃßÏ ãä Ãäß ÊÓÊÎÏã CORS ÃæáÇğ ŞÈá ÇáãÕÇÏŞÉ æÇáÜ Authorization
+app.UseCors("AllowAll");  // ÊØÈíŞ ÓíÇÓÉ CORS
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapControllers();
 app.Run();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
