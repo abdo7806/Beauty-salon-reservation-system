@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace BookingSystem.Application.DTOs.Availabilities
 {
-    internal class UpdateAvailabilityDto
+    public class UpdateAvailabilityDto
     {
+        public int DayOfWeek { get; set; }
+        public TimeSpan StartTime { get; set; }
+        public TimeSpan EndTime { get; set; }
     }
+
 }

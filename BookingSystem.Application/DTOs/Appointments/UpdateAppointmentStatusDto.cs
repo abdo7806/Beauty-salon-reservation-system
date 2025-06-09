@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BookingSystem.Application.DTOs.Appointments
 {
-    internal class UpdateAppointmentStatusDto
+    public class UpdateAppointmentStatusDto
     {
+        public string Status { get; set; } = default!; // "Pending", "Confirmed", "Canceled"
     }
 }

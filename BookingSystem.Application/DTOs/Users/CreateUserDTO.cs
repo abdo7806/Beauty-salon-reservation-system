@@ -2,6 +2,8 @@
 
 namespace Wasfaty.Application.DTOs.Users
 {
+
+
     public class CreateUserDto
     {
         [Required]
@@ -16,5 +18,8 @@ namespace Wasfaty.Application.DTOs.Users
 
         [Required]
         public string Password { get; set; }
+
+
+
     }
 }

@@ -1687,7 +1687,11 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
-          "BookingSystem.Domain": "1.0.0"
+          "BCrypt.Net-Next": "4.0.3",
+          "BookingSystem.Domain": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "9.0.5",
+          "Microsoft.Extensions.Logging": "9.0.5",
+          "System.IdentityModel.Tokens.Jwt": "8.12.0"
         },
         "compile": {
           "bin/placeholder/BookingSystem.Application.dll": {}
@@ -1717,6 +1721,7 @@
           "Microsoft.EntityFrameworkCore": "9.0.5",
           "Microsoft.EntityFrameworkCore.Relational": "9.0.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.5",
+          "Microsoft.Extensions.Logging": "9.0.5",
           "System.IdentityModel.Tokens.Jwt": "8.12.0"
         },
         "compile": {

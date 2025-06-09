@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BookingSystem.Application.DTOs.Staff
 {
-    internal class UpdateStaffDto
+    public class UpdateStaffDto
     {
+        public string? Speciality { get; set; }
     }
 }

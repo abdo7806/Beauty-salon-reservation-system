@@ -8,9 +8,8 @@ namespace Wasfaty.Application.DTOs.Users
 {
     public enum UserRoleEnum
     {
-        Admin = 1,
-        Doctor = 2,
-        Patient = 3,
-        Pharmacist = 4
+        Client = 0,
+        Staff = 1,
+        Admin = 2
     }
 }

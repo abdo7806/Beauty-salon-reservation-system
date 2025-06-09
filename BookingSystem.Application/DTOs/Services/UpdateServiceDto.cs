@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace BookingSystem.Application.DTOs.Services
 {
-    internal class UpdateServiceDto
+    public class UpdateServiceDto
     {
+        public string Name { get; set; } = default!;
+        public int Duration { get; set; }
+        public decimal Price { get; set; }
     }
 }

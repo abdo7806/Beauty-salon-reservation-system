@@ -19,9 +19,5 @@ namespace Wasfaty.Application.DTOs.Auth
         [EnumDataType(typeof(UserRoleEnum), ErrorMessage = "نوع المستخدم غير صالح")]
         public UserRoleEnum Role { get; set; }
 
-       /* public string FullName { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
-        public string Password { get; set; } = string.Empty;
-        public int RoleId { get; set; } // حسب الجدول الموجود عندك*/
     }
 }

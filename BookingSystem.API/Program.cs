@@ -1,3 +1,7 @@
+using BookingSystem.Application.Interfaces.Repositories;
+using BookingSystem.Application.Interfaces.Services;
+using BookingSystem.Application.Services;
+using BookingSystem.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -50,6 +54,13 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddDbContext<BookingDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserService, UserService>();
+
+
+
 
 // ≈÷«›… Œœ„«  Swagger
 builder.Services.AddEndpointsApiExplorer();
