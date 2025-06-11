@@ -11,8 +11,8 @@ namespace BookingSystem.Application.Interfaces.Repositories
     {
         Task<Service?> GetByIdAsync(int id);
         Task<List<Service>> GetAllAsync();
-        Task AddAsync(Service service);
-        Task UpdateAsync(Service service);
-        Task DeleteAsync(Service service);
+        Task<Service> AddAsync(Service service);
+        Task<Service> UpdateAsync(Service service);
+        Task<bool> DeleteAsync(Service service);
     }
 }
