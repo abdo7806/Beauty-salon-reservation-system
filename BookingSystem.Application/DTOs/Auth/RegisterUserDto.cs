@@ -15,9 +15,7 @@ namespace Wasfaty.Application.DTOs.Auth
         [MinLength(6, ErrorMessage = "كلمة المرور يجب أن تكون على الأقل 6 أحرف")]
         public string Password { get; set; }
 
-        [Required(ErrorMessage = "نوع المستخدم مطلوب")]
-        [EnumDataType(typeof(UserRoleEnum), ErrorMessage = "نوع المستخدم غير صالح")]
-        public UserRoleEnum Role { get; set; }
+        public UserRoleEnum Role { get; set; } = UserRoleEnum.Client;
 
     }
 }
