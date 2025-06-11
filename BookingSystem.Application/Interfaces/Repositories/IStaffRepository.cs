@@ -11,8 +11,8 @@ namespace BookingSystem.Application.Interfaces.Repositories
     {
         Task<Staff?> GetByIdAsync(int id);
         Task<List<Staff>> GetAllAsync();
-        Task AddAsync(Staff staff);
-        Task UpdateAsync(Staff staff);
-        Task DeleteAsync(Staff staff);
+        Task<Staff> AddAsync(Staff staff);
+        Task<Staff> UpdateAsync(Staff staff);
+        Task<bool> DeleteAsync(Staff staff);
     }
 }

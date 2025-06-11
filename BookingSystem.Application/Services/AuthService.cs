@@ -21,6 +21,7 @@ public class AuthService : IAuthService
         _configuration = configuration;
         _userRepository = userRepository;
     }
+    
 
     public async Task<bool> ChangeUserPassword(int userId, string currentPassword, string newPassword)
     {

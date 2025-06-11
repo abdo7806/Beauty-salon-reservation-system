@@ -88,6 +88,7 @@ namespace BookingSystem.Application.Services
                 _logger.LogError(ex, "Error deleting user {UserId}", id);
                 return false;
             }
+       
         }
 
         public async Task<List<UserDto>> GetAllAsync()
