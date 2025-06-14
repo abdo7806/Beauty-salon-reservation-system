@@ -12,8 +12,12 @@ namespace BookingSystem.Application.Interfaces.Repositories
         Task<Availability?> GetByIdAsync(int id);
         Task<List<Availability>> GetAllAsync();
         Task<List<Availability>> GetByStaffIdAsync(int staffId);
-        Task AddAsync(Availability availability);
-        Task UpdateAsync(Availability availability);
-        Task DeleteAsync(Availability availability);
+        Task<Availability> AddAsync(Availability availability);
+        Task<Availability> UpdateAsync(Availability availability);
+        Task<bool> DeleteAsync(Availability availability);
+
+        Task<Availability?> GetByStaffIdAndDayAsync(int staffId, DayOfWeek day);
+
+
     }
 }

@@ -56,6 +56,18 @@ public class AuthService : IAuthService
 
         var token = GenerateJwtToken(user);
 
+        string role = "";
+        switch (user.Role)
+        {
+            case UserRole.Admin:
+                role = "Admin"; break;
+            case UserRole.Staff:
+                role = "Staff"; break;
+            case UserRole.Client:
+                role = "Client"; break;
+
+        }
+
         return new LoginResponseDto 
         { 
             Token = token ,
@@ -64,7 +76,7 @@ public class AuthService : IAuthService
                 Id = user.Id,
                 FullName = user.FullName,
                 Email = user.Email,
-               // Role = (UserRoleEnum)user.Role,
+                Role = role,
             }
         };
     }
@@ -80,7 +92,7 @@ public class AuthService : IAuthService
             FullName = request.FullName,
             Email = request.Email,
             PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password),
-            Role = (UserRole)request.Role,
+            Role = UserRole.Client,
             CreatedAt = DateTime.UtcNow
         };
 

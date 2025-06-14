@@ -11,9 +11,9 @@ namespace BookingSystem.Application.Interfaces.Services
     {
         Task<AvailabilityDto?> GetByIdAsync(int id);
         Task<List<AvailabilityDto>> GetAllAsync();
-        Task CreateAsync(CreateAvailabilityDto dto);
-        Task UpdateAsync(int id, UpdateAvailabilityDto dto);
-        Task DeleteAsync(int id);
+        Task<AvailabilityDto> CreateAsync(CreateAvailabilityDto dto);
+        Task<AvailabilityDto> UpdateAsync(int id, UpdateAvailabilityDto dto);
+        Task<bool> DeleteAsync(int id);
         Task<List<AvailabilityDto>> GetByStaffIdAsync(int staffId);
     }
 }

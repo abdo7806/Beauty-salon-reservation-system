@@ -15,7 +15,7 @@ namespace Wasfaty.Application.DTOs.Auth
         [MinLength(6, ErrorMessage = "كلمة المرور يجب أن تكون على الأقل 6 أحرف")]
         public string Password { get; set; }
 
-        public UserRoleEnum Role { get; set; } = UserRoleEnum.Client;
+       // public UserRoleEnum Role { get; set; } = UserRoleEnum.Client;
 
     }
 }

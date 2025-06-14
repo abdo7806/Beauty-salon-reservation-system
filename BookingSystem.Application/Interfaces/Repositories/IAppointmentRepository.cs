@@ -13,8 +13,11 @@ namespace BookingSystem.Application.Interfaces.Repositories
         Task<List<Appointment>> GetAllAsync();
         Task<List<Appointment>> GetByClientIdAsync(int clientId);
         Task<List<Appointment>> GetByStaffIdAsync(int staffId);
-        Task AddAsync(Appointment appointment);
-        Task UpdateAsync(Appointment appointment);
-        Task DeleteAsync(Appointment appointment);
+        Task<Appointment> AddAsync(Appointment appointment);
+        Task<Appointment> UpdateAsync(Appointment appointment);
+        Task<bool> DeleteAsync(Appointment appointment);
+
+        Task<List<Appointment>> GetByStaffIdAndDateAsync(int staffId, DateTime date);
+
     }
 }

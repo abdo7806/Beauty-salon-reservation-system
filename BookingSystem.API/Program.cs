@@ -71,6 +71,16 @@ builder.Services.AddScoped<IStaffService, StaffService>();
 builder.Services.AddScoped<IServiceRepository, ServiceRepository>();
 builder.Services.AddScoped<IServiceService, ServiceService>();
 
+
+builder.Services.AddScoped<IAvailabilityRepository, AvailabilityRespository>();
+builder.Services.AddScoped<IAvailabilityService, AvailabilityServices>();
+
+
+
+builder.Services.AddScoped<IAppointmentRepository, AppointmentRepository>();
+builder.Services.AddScoped<IAppointmentService, AppointmentService>();
+
+
 // ≈÷«›… Œœ„«  Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

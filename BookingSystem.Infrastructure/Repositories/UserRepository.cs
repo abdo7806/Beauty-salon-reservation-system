@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace BookingSystem.Infrastructure.Repositories
 {
+    
     public class UserRepository : IUserRepository
     {
         private readonly BookingDbContext _context;
@@ -56,6 +57,7 @@ namespace BookingSystem.Infrastructure.Repositories
                 _logger.LogError(ex, "Unexpected error while adding user");
                 return null;
             }
+      
         }
 
         public async Task<bool> DeleteAsync(User user)
@@ -85,6 +87,7 @@ namespace BookingSystem.Infrastructure.Repositories
                 _logger.LogError(ex, "Error deleting user {UserId}", user.Id);
                 return false;
             }
+      
         }
 
         public async Task<List<User>> GetAllAsync()
@@ -144,6 +147,7 @@ namespace BookingSystem.Infrastructure.Repositories
                 _logger.LogError(ex, "Error updating user {UserId}", user.Id);
                 return null;
             }
+     
         }
 
         public async Task<User?> GetByEmailAsync(string email)
